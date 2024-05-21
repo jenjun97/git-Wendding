@@ -1,20 +1,7 @@
-.carousel-item {
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-    display: block;
-}
-
-.carousel-item-next,
-.carousel-item-prev {
-    opacity: 0;
-}
-
-.carousel-item-next.carousel-item-start,
-.carousel-item-prev.carousel-item-end,
-.carousel-item.active {
-    opacity: 1;
+/* 定義內容區塊的基本樣式 */
+.content-section {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: #f9f9f9;
 }

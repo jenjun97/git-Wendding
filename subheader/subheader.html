@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subheader</title>
-    <!-- 引入樣式 -->
-    <link rel="stylesheet" href="index.css">
+    <!-- 引入subheader.css -->
+    <link rel="stylesheet" href="subheader.css">
 </head>
 <body>
     <div class="content-section">
@@ -24,5 +24,16 @@
         <p>猶豫的兩人終於下定決心</p>
         <p>“未來的路，讓我們一起手牽手走下去吧!!”</p>
     </div>
+    <!-- 引入subheader.js -->
+    <script src="subheader.js"></script>
+    <script>
+        // 計算高度並發送給父窗口
+        function sendHeight() {
+            var height = document.body.scrollHeight;
+            window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+        }
+        window.onload = sendHeight;
+        window.onresize = sendHeight;
+    </script>
 </body>
 </html>
