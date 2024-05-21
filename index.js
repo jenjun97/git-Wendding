@@ -5,7 +5,6 @@
 function toggleSection(sectionId) {
     // 獲取所有區塊的ID
     const sections = [
-        'slideshow',
         'subheader',
         'story',
         'aboutus',
@@ -38,7 +37,7 @@ function toggleSection(sectionId) {
 // 動態調整iframe高度
 window.addEventListener('message', function(event) {
     if (event.data.type === 'setHeight') {
-        const iframe = document.getElementById(event.data.iframeId);
+        const iframe = document.getElementById('subheaderIframe');
         if (iframe) {
             iframe.style.height = event.data.height + 'px';
         }

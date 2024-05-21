@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="subheader.css">
 </head>
 <body>
-    <div class="content-section">
-        <p>2018年秋，他們初次見面</p>
-        <p>她，外型亮眼，美女一位</p>
-        <p>他，外型俊俏，酷男一枚</p>
-        <p>在互相看了一眼後，彼此吸引</p>
-        <p>就此沉迷於愛戀中</p>
-        <p>愛情，讓她下廚烹調</p>
-        <p>只想綁住他的胃</p>
-        <p>愛情，讓他走向戶外</p>
-        <p>與她一起迎向陽光</p>
-        <p>愛情，讓雙方更有勇氣面對困難</p>
-        <p>愛情，讓彼此更能看見自己</p>
-        <p>於是在今年</p>
-        <p>猶豫的兩人終於下定決心</p>
-        <p>“未來的路，讓我們一起手牽手走下去吧!!”</p>
+    <div class="container">
+        <div class="content-section">
+            <h2 class="title">他們的故事</h2>
+            <p class="story">2018年秋，他們初次見面</p>
+            <p class="story">她，外型亮眼，美女一位</p>
+            <p class="story">他，外型俊俏，酷男一枚</p>
+            <p class="story">在互相看了一眼後，彼此吸引</p>
+            <p class="story">就此沉迷於愛戀中</p>
+            <p class="story">愛情，讓她下廚烹調</p>
+            <p class="story">只想綁住他的胃</p>
+            <p class="story">愛情，讓他走向戶外</p>
+            <p class="story">與她一起迎向陽光</p>
+            <p class="story">愛情，讓雙方更有勇氣面對困難</p>
+            <p class="story">愛情，讓彼此更能看見自己</p>
+            <p class="story">於是在今年</p>
+            <p class="story">猶豫的兩人終於下定決心</p>
+            <p class="conclusion">“未來的路，讓我們一起手牽手走下去吧!!”</p>
+        </div>
     </div>
     <!-- 引入subheader.js -->
     <script src="subheader.js"></script>
@@ -32,7 +35,10 @@
             var height = document.body.scrollHeight;
             window.parent.postMessage({ type: 'setHeight', height: height }, '*');
         }
-        window.onload = sendHeight;
+        window.onload = function() {
+            sendHeight();
+            setInterval(sendHeight, 1000); // 每秒檢查一次高度
+        };
         window.onresize = sendHeight;
     </script>
 </body>

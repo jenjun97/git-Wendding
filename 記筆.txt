@@ -8,3 +8,12 @@
 7,喜宴提醒
 8,喜訊分享
 9,賓客相冊
+
+這是我的index.html
+我沒有安裝任何的http伺服器
+是直接在chrome開啟html的
+index.html有自己的css, js
+另外index中的每個項目都有各自的資料夾，html, js, css
+後續的修改請遵守下列原則
+1、index.html保持乾淨，任何項目修改都只動到自己的html, js, css
+2、所有的內容都要加上註解說明

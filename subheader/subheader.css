@@ -1,7 +1,46 @@
-/* 定義內容區塊的基本樣式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
 .content-section {
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ccc;
-    margin-top: 10px;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.story {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.conclusion {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #d9534f;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
