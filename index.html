@@ -10,71 +10,88 @@
 
     <!-- 引用slideshow的CSS -->
     <link rel="stylesheet" href="slideshow/slideshow.css">
-    <!-- 其他CSS引用註釋掉 -->
-    <!-- <link rel="stylesheet" href="subheader/subheader.css"> -->
-    <!-- <link rel="stylesheet" href="invitation/invitation.css"> -->
-    <!-- <link rel="stylesheet" href="wedding-album/wedding-album.css"> -->
-    <!-- <link rel="stylesheet" href="rsvp/rsvp.css"> -->
-    <!-- <link rel="stylesheet" href="map/map.css"> -->
-    <!-- <link rel="stylesheet" href="reminder/reminder.css"> -->
-    <!-- <link rel="stylesheet" href="share/share.css"> -->
-    <!-- <link rel="stylesheet" href="guest-album/guest-album.css"> -->
+    
+    <!-- 引用index.css -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>test w</h1>
-    <!-- 1. 輪播照片 -->
+    
+    <!-- 輪播照片區塊 -->
     <div id="slideshow">
         <div id="slideshow-content"></div>
     </div>
 
-    <!-- 其他部分註釋掉 -->
-    <!--
-    <div id="subheader">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('subheader')">副標題</button>
+    </div>
+    <div id="subheader" class="content-section">
         <div id="subheader-content"></div>
     </div>
 
-    <div id="invitation">
-        <div id="invitation-content"></div>
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('story')">愛情故事</button>
+    </div>
+    <div id="story" class="content-section">
+        <div id="story-content"></div>
     </div>
 
-    <div id="wedding-album">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('aboutus')">關於我們</button>
+    </div>
+    <div id="aboutus" class="content-section">
+        <div id="aboutus-content"></div>
+    </div>
+
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('wedding-album')">婚紗相冊</button>
+    </div>
+    <div id="wedding-album" class="content-section">
         <div id="wedding-album-content"></div>
     </div>
 
-    <div id="rsvp">
-        <div id="rsvp-content"></div>
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('reply')">婚宴回函</button>
+    </div>
+    <div id="reply" class="content-section">
+        <div id="reply-content"></div>
     </div>
 
-    <div id="map">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('map')">婚宴地圖</button>
+    </div>
+    <div id="map" class="content-section">
         <div id="map-content"></div>
     </div>
 
-    <div id="reminder">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>
+    </div>
+    <div id="reminder" class="content-section">
         <div id="reminder-content"></div>
     </div>
 
-    <div id="share">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('share')">喜訊分享</button>
+    </div>
+    <div id="share" class="content-section">
         <div id="share-content"></div>
     </div>
 
-    <div id="guest-album">
+    <div class="my-2">
+        <button class="btn btn-primary w-100" onclick="toggleSection('guest-album')">賓客相冊</button>
+    </div>
+    <div id="guest-album" class="content-section">
         <div id="guest-album-content"></div>
     </div>
-    -->
 
     <!-- 引用Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- 引用slideshow的JS -->
     <script src="slideshow/slideshow.js"></script>
-    <!-- 其他JS引用註釋掉 -->
-    <!-- <script src="subheader/subheader.js"></script> -->
-    <!-- <script src="invitation/invitation.js"></script> -->
-    <!-- <script src="wedding-album/wedding-album.js"></script> -->
-    <!-- <script src="rsvp/rsvp.js"></script> -->
-    <!-- <script src="map/map.js"></script> -->
-    <!-- <script src="reminder/reminder.js"></script> -->
-    <!-- <script src="share/share.js"></script> -->
-    <!-- <script src="guest-album/guest-album.js"></script> -->
+    
+    <!-- 引用index.js -->
+    <script src="index.js"></script>
 </body>
 </html>

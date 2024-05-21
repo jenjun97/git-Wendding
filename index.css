@@ -1,0 +1,10 @@
+/* 定義內容區塊的基本樣式 */
+.content-section {
+    display: none; /* 預設為隱藏 */
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+/* 按鈕的樣式已由Bootstrap處理，不需額外定義 */
