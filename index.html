@@ -20,52 +20,44 @@
 <body>
     <h1>test w</h1>
     
-    <!-- 輪播照片區塊 -->
+    <!-- 轮播照片区块 -->
     <div id="slideshow">
         <div id="slideshow-content"></div>
     </div>
 
+	<!-- 副标题 -->
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 text-center">
+				<h2 style="text-decoration: none; font-style: normal; font-size: 26px; font-weight: normal;">2024.10.19</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- info -->
     <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('subheader')">副標題</button>
+        <button class="btn btn-primary w-100" onclick="toggleSection('info')">喜宴资讯</button>
     </div>
-    <div id="subheader" class="content-section" style="display:none;">
-        <!-- 引入subheader.html -->
-        <iframe id="subheaderIframe" src="subheader/subheader.html" width="100%" frameborder="0"></iframe>
-    </div>
-
-    <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('story')">愛情故事</button>
-    </div>
-    <div id="story" class="content-section" style="display:none;">
-        <div id="story-content"></div>
-    </div>
-
-    <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('aboutus')">關於我們</button>
-    </div>
-    <div id="aboutus" class="content-section" style="display:none;">
-        <div id="aboutus-content"></div>
-    </div>
-
-    <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('wedding-album')">婚紗相冊</button>
-    </div>
-    <div id="wedding-album" class="content-section" style="display:none;">
-        <div id="wedding-album-content"></div>
+    <div id="info" class="content-section" style="display:none;">
+        <!-- 引入info.html -->
+        <iframe id="infoIframe" src="info/info.html" width="100%" frameborder="0"></iframe>
     </div>
 
     <div class="my-2">
         <button class="btn btn-primary w-100" onclick="toggleSection('reply')">婚宴回函</button>
     </div>
-    <div id="reply" class="content-section" style="display:none;">
-        <div id="reply-content"></div>
+    <div id="reply" class="content-section">
+        <!-- 引入reply.html -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdr9AIolvSGjuirBEnJwxHwNWugL1965m8f1Y760y4Uwq5zfQ/viewform?embedded=true" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
     </div>
 
     <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('map')">婚宴地圖</button>
+        <button class="btn btn-primary w-100" onclick="toggleSection('map')">婚宴地图</button>
     </div>
     <div id="map" class="content-section" style="display:none;">
-        <div id="map-content"></div>
+        <div id="map-content">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.6739774464763!2d121.20467957488256!3d24.943174041943738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823a8dd7ded09%3A0xb73295131781b2c5!2zQW1vdXLpmL_mspA!5e0!3m2!1szh-TW!2stw!4v1716369949011!5m2!1szh-TW!2stw" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
     </div>
 
     <div class="my-2">
@@ -76,14 +68,14 @@
     </div>
 
     <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('share')">喜訊分享</button>
+        <button class="btn btn-primary w-100" onclick="toggleSection('share')">喜讯分享</button>
     </div>
     <div id="share" class="content-section" style="display:none;">
         <div id="share-content"></div>
     </div>
 
     <div class="my-2">
-        <button class="btn btn-primary w-100" onclick="toggleSection('guest-album')">賓客相冊</button>
+        <button class="btn btn-primary w-100" onclick="toggleSection('guest-album')">宾客相册</button>
     </div>
     <div id="guest-album" class="content-section" style="display:none;">
         <div id="guest-album-content"></div>

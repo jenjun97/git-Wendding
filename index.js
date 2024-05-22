@@ -1,11 +1,11 @@
 /**
- * 切換指定區塊的顯示或隱藏，並關閉其他區塊
- * @param {string} sectionId - 區塊的ID
+ * 切换指定区块的显示或隐藏，并关闭其他区块
+ * @param {string} sectionId - 区块的ID
  */
 function toggleSection(sectionId) {
-    // 獲取所有區塊的ID
+    // 获取所有区块的ID
     const sections = [
-        'subheader',
+        'info',
         'story',
         'aboutus',
         'wedding-album',
@@ -20,24 +20,24 @@ function toggleSection(sectionId) {
         const section = document.getElementById(id);
         if (section) {
             if (id === sectionId) {
-                // 切換指定區塊的顯示狀態
+                // 切换指定区块的显示状态
                 if (section.style.display === "none" || section.style.display === "") {
                     section.style.display = "block";
                 } else {
                     section.style.display = "none";
                 }
             } else {
-                // 隱藏其他區塊
+                // 隐藏其他区块
                 section.style.display = "none";
             }
         }
     });
 }
 
-// 動態調整iframe高度
+// 动态调整iframe高度
 window.addEventListener('message', function(event) {
     if (event.data.type === 'setHeight') {
-        const iframe = document.getElementById('subheaderIframe');
+        const iframe = document.getElementById('infoIframe');
         if (iframe) {
             iframe.style.height = event.data.height + 'px';
         }
