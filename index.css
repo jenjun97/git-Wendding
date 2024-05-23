@@ -5,6 +5,24 @@
     border: 1px solid #ccc;
     margin-top: 10px;
     background-color: #f9f9f9;
+    width: 100%; /* 設置內容區塊寬度為100% */
+    max-width: 430px; /* 設置內容區塊的最大寬度 */
+    min-width: 380px; /* 設置內容區塊的最小寬度 */
+    margin: 0 auto; /* 置中 */
 }
 
-/* 按鈕的樣式已由Bootstrap處理，不需額外定義 */
+/* 内容的样式 */
+.content-wrapper {
+    width: 100%; /* 設置內容寬度為100% */
+    max-width: 430px; /* 設置內容的最大寬度 */
+    min-width: 380px; /* 設置內容的最小寬度 */
+    margin: 0 auto; /* 置中 */
+    text-align: center; /* 文字置中 */
+}
+
+/* 針對螢幕寬度小於380px的樣式 */
+@media (max-width: 380px) {
+    .content-wrapper, .content-section {
+        max-width: 100%; /* 設置內容區塊的最大寬度為100% */
+    }
+}
