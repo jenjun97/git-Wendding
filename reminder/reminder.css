@@ -1,0 +1,12 @@
+/* 設置按鈕置中 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}

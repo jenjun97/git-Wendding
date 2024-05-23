@@ -48,6 +48,7 @@
         <iframe id="replyIframe" src="reply/reply.html" width="100%" height="2000" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">載入中…</iframe>
     </div>
 
+    <!-- 婚宴地圖 -->
     <div class="my-2 content-wrapper">
         <button class="btn btn-primary w-100" onclick="toggleSection('map')">婚宴地圖</button>
     </div>
@@ -57,12 +58,14 @@
         </div>
     </div>
 
-    <div class="my-2 content-wrapper">
-        <button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>
-    </div>
-    <div id="reminder" class="content-section content-wrapper">
-        <div id="reminder-content"></div>
-    </div>
+	<!-- 喜宴提醒 -->
+	<div class="my-2 content-wrapper">
+		<button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>
+	</div>
+	<div id="reminder" class="content-section content-wrapper">
+		<!-- 引入reminder.html -->
+		<iframe id="reminderIframe" src="reminder/reminder.html" width="100%" frameborder="0"></iframe>
+	</div>
 
     <div class="my-2 content-wrapper">
         <button class="btn btn-primary w-100" onclick="toggleSection('share')">喜訊分享</button>
