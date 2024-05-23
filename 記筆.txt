@@ -1,9 +1,11 @@
-這是我的index.html
+index是我自己寫的網頁
 我沒有安裝任何的http伺服器
 是直接在chrome開啟html的
 index.html有自己的css, js
-另外index中的每個項目都有各自的資料夾，html, js, css
+index中的每個項目都有各自的資料夾，html, js, css
 後續的修改請遵守下列原則
 1、index.html保持乾淨，任何項目修改都只動到自己的html, js, css
 2、所有的內容都要加上註解說明
+
+回覆請用繁體中文回答
 
