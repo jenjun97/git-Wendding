@@ -41,5 +41,14 @@ window.addEventListener('message', function(event) {
         if (iframe) {
             iframe.style.height = event.data.height + 'px';
         }
+    } else if (event.data.type === 'setHeightReply') {
+        const section = document.getElementById('reply');
+        if (section) {
+            section.style.height = event.data.height + 'px';
+        }
     }
 });
+
+
+
+
