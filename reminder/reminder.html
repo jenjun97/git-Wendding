@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>喜宴提醒</title>
-    <link rel="stylesheet" href="reminder.css">
-</head>
-<body>
-    <!-- 中央按鈕，點擊後生成Google Calendar URL -->
-    <div class="button-container">
-        <button id="reminderButton" class="btn btn-primary">新增到Google日曆</button>
-    </div>
-    
-    <!-- 新增一個按鈕，點擊後在iPhone行事曆上新增事件 -->
-    <div class="button-container">
-        <button id="iphoneReminderButton" class="btn btn-secondary">新增到iPhone行事曆</button>
-    </div>
+<div class="reminder-wrapper">
+    <!-- Google提醒按鈕 -->
+    <button type="button" class="btn btn-outline-success"
+        onclick="window.location.href='https://www.addevent.com/event/xY21860587+google'">
+        Google提醒
+    </button>
 
-    <script src="reminder.js"></script>
-</body>
-</html>
+    <!-- iPhone提醒按鈕 -->
+    <button type="button" class="btn btn-outline-info"
+        onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">
+        iPhone提醒
+    </button>
+</div>

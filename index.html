@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,17 @@
 
     <!-- 引用slideshow的CSS -->
     <link rel="stylesheet" href="slideshow/slideshow.css">
-    
+
     <!-- 引用index.css -->
     <link rel="stylesheet" href="index.css">
-    
+
     <!-- 引入Google的jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <h1 class="text-center">test w</h1>
-    
+    <h1 class="text-center">test w--6</h1>
+
     <!-- 輪播照片區塊 -->
     <div id="slideshow" class="content-wrapper">
         <div id="slideshow-content"></div>
@@ -29,7 +31,7 @@
     <div class="content-wrapper">
         <h2 class="text-center" style="text-decoration: none; font-style: normal; font-size: 26px; font-weight: normal;">2024.10.19</h2>
     </div>
-    
+
     <!-- 喜宴資訊 -->
     <div class="my-2 content-wrapper">
         <button class="btn btn-primary w-100" onclick="toggleSection('info')">喜宴資訊</button>
@@ -39,13 +41,14 @@
         <iframe id="infoIframe" src="info/info.html" width="100%" frameborder="0"></iframe>
     </div>
 
-    <!-- 喜宴資訊 -->
+    <!-- 婚宴回函 -->
     <div class="my-2 content-wrapper">
         <button class="btn btn-primary w-100" onclick="toggleSection('reply')">婚宴回函</button>
     </div>
     <div id="reply" class="content-section content-wrapper">
         <!-- 引入reply.html -->
-        <iframe id="replyIframe" src="reply/reply.html" width="100%" height="2000" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">載入中…</iframe>
+        <iframe id="replyIframe" src="reply/reply.html" width="100%" height="2000" frameborder="0" marginheight="0"
+            marginwidth="0" scrolling="no">載入中…</iframe>
     </div>
 
     <!-- 婚宴地圖 -->
@@ -54,19 +57,43 @@
     </div>
     <div id="map" class="content-section content-wrapper">
         <div id="map-content">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.6739774464763!2d121.20467957488256!3d24.943174041943738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823a8dd7ded09%3A0xb73295131781b2c5!2zQW1vdXLpmL_mspA!5e0!3m2!1szh-TW!2stw!4v1716369949011!5m2!1szh-TW!2stw" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.6739774464763!2d121.20467957488256!3d24.943174041943738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823a8dd7ded09%3A0xb73295131781b2c5!2zQW1vdXLpmL_mspA!5e0!3m2!1szh-TW!2stw!4v1716369949011!5m2!1szh-TW!2stw"
+                width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
-	<!-- 喜宴提醒 -->
-	<div class="my-2 content-wrapper">
-		<button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>
-	</div>
-	<div id="reminder" class="content-section content-wrapper">
-		<!-- 引入reminder.html -->
-		<iframe id="reminderIframe" src="reminder/reminder.html" width="100%" frameborder="0"></iframe>
-	</div>
+    <!-- 喜宴提醒 -->
+    <div class="my-2 content-wrapper">
+        <button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>
+    </div>
+    <div id="reminder" class="content-section content-wrapper">
+        <div id="reminderContent"></div>
+    </div>
 
+    <!-- Google提醒 -->
+<!--    <div class="my-2 content-wrapper">-->
+<!--        <button class="btn btn-primary w-100" onclick="toggleSection('google-reminder')">Google提醒</button>-->
+<!--    </div>-->
+<!--    <div id="google-reminder" class="content-section content-wrapper w-100">-->
+<!--        <button type="button" class="btn btn-outline-success"-->
+<!--            onclick="window.location.href='https://www.addevent.com/event/xY21860587+google'">-->
+<!--            Google提醒-->
+<!--        </button>-->
+<!--    </div>-->
+
+    <!-- iPhone提醒 -->
+<!--    <div class="my-2 content-wrapper">-->
+<!--        <button class="btn btn-primary w-100" onclick="toggleSection('iphone-reminder')">iPhone提醒</button>-->
+<!--    </div>-->
+<!--    <div id="iphone-reminder" class="content-section content-wrapper w-100">-->
+<!--        <button type="button" class="btn btn-outline-info"-->
+<!--            onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">-->
+<!--            iPhone提醒-->
+<!--        </button>-->
+<!--    </div>-->
+
+    <!-- 喜訊分享 -->
     <div class="my-2 content-wrapper">
         <button class="btn btn-primary w-100" onclick="toggleSection('share')">喜訊分享</button>
     </div>
@@ -86,8 +113,9 @@
 
     <!-- 引用slideshow的JS -->
     <script src="slideshow/slideshow.js"></script>
-    
+
     <!-- 引用index.js -->
     <script src="index.js"></script>
 </body>
+
 </html>

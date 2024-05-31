@@ -1,3 +1,7 @@
+www.addevent.com
+
+http://網址?openExternalBrowser=1
+
 index是我自己寫的網頁
 我沒有安裝任何的http伺服器
 是直接在chrome開啟html的

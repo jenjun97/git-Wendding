@@ -1,3 +1,5 @@
+// 現有的JavaScript代碼...
+
 /**
  * 切换指定区块的显示或隐藏，并关闭其他区块
  * @param {string} sectionId - 区块的ID
@@ -49,6 +51,15 @@ window.addEventListener('message', function(event) {
     }
 });
 
-
-
-
+// 動態加載reminder.html內容
+document.addEventListener('DOMContentLoaded', function() {
+    const reminderContent = document.getElementById('reminderContent');
+    if (reminderContent) {
+        fetch('reminder/reminder.html')
+            .then(response => response.text())
+            .then(data => {
+                reminderContent.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading reminder.html:', error));
+    }
+});
