@@ -1,6 +1,19 @@
+// 事件
 www.addevent.com
 
+// line開網址問題
 http://網址?openExternalBrowser=1
+
+// 按鈕樣式
+https://uiverse.io/umerhassaan/shy-pug-80
+https://uiverse.io/UmangLadha/neat-duck-51
+https://uiverse.io/abuayaan01/tall-mayfly-66
+https://uiverse.io/mayurd8862/heavy-yak-23
+https://uiverse.io/Yaseen549/curly-termite-88
+https://uiverse.io/Satwinder04/plastic-wolverine-30
+https://freefrontend.com/css-buttons/
+https://codepen.io/ash_creator/pen/zYaZXLJ
+
 
 index是我自己寫的網頁
 我沒有安裝任何的http伺服器
