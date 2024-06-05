@@ -14,6 +14,9 @@ https://uiverse.io/Satwinder04/plastic-wolverine-30
 https://freefrontend.com/css-buttons/
 https://codepen.io/ash_creator/pen/zYaZXLJ
 
+// 色卡
+https://www.shutterstock.com/zh-Hant/blog/color-palettes-for-websites
+
 
 index是我自己寫的網頁
 我沒有安裝任何的http伺服器

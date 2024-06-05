@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>info</title>
     <!-- 引入info.css -->
-<!--    <link rel="stylesheet" href="info.css">-->
+    <link rel="stylesheet" href="info.css">
 </head>
 <body>
     <div class="container">
@@ -28,6 +28,18 @@
         </div>
     </div>
     <!-- 引入info.js -->
-<!--    <script src="info.js"></script>-->
+    <script src="info.js"></script>
+    <script>
+        // 計算高度並發送給父窗口
+        function sendHeight() {
+            var height = document.body.scrollHeight;
+            window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+        }
+        window.onload = function() {
+            sendHeight();
+            setInterval(sendHeight, 1000); // 每秒檢查一次高度
+        };
+        window.onresize = sendHeight;
+    </script>
 </body>
 </html>

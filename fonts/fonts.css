@@ -1,0 +1,84 @@
+/* Google定義 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.lxgw-wenkai-tc-light {
+	font-family: "LXGW WenKai TC", cursive;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.lxgw-wenkai-tc-regular {
+	font-family: "LXGW WenKai TC", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/*粗體*/
+.lxgw-wenkai-tc-bold {
+	font-family: "LXGW WenKai TC", cursive;
+	font-weight: 700;
+	font-style: normal;
+}
+
+/*英數*/
+.lxgw-wenkai-tc-regular {
+	font-family: "LXGW WenKai TC", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* 本地字體定義 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* 本地字體定義 */
+@font-face {
+	font-family: 'JasonHandwriting1';
+	src: url('JasonHandwriting1.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'JasonHandwriting2';
+	src: url('JasonHandwriting2.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'JasonHandwriting3';
+	src: url('JasonHandwriting3.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'JasonHandwriting4';
+	src: url('JasonHandwriting4.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'JasonHandwriting5';
+	src: url('JasonHandwriting5.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'JasonHandwriting5p';
+	src: url('JasonHandwriting5p.woff') format('woff');
+}
+
+/* 使用本地字體的class定義 */
+.font-jasonhandwriting1 {
+	font-family: 'JasonHandwriting1';
+}
+
+.font-jasonhandwriting2 {
+	font-family: 'JasonHandwriting2';
+}
+
+.font-jasonhandwriting3 {
+	font-family: 'JasonHandwriting3';
+}
+
+.font-jasonhandwriting4 {
+	font-family: 'JasonHandwriting4';
+}
+
+.font-jasonhandwriting5 {
+	font-family: 'JasonHandwriting5';
+}
+
+.font-jasonhandwriting5p {
+	font-family: 'JasonHandwriting5p';
+}
