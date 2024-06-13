@@ -51,22 +51,49 @@ function toggleSection(sectionId) {
 //    // 直接加載iframe而不提示
 //    document.getElementById('reply').appendChild(iframe);
 //}
-// index.js
-document.getElementById('google-calendar-btn').addEventListener('click', function() {
-	console.log('google button onclick');
 
-	const url = 'https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBlbDZkbjVpMHFwdnNsYmJ1ZG9sajBkcjAgamVuanVuOTdAbQ&tmsrc=jenjun97%40gmail.com';
+// google行事曆
+document.getElementById('google-calendar-btn').addEventListener('click', function() {
+	const event = {
+		summary: '姻釗Angel&政均Jun婚宴日',
+		location: '324桃園市平鎮區延平路二段371號',
+		description: '姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375',
+		start: {
+			dateTime: '2024-10-19T12:00:00',
+			timeZone: 'Asia/Taipei'
+		},
+		end: {
+			dateTime: '2024-10-19T14:00:00',
+			timeZone: 'Asia/Taipei'
+		},
+		reminders: {
+			useDefault: false,
+			overrides: [
+				{ method: 'reminder', minutes: 30 }
+			]
+		}
+	};
+
+	const baseURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+	const text = `&text=${encodeURIComponent(event.summary)}`;
+	const dates = `&dates=${event.start.dateTime.replace(/-|:|\.\d\d\d/g, '')}/${event.end.dateTime.replace(/-|:|\.\d\d\d/g, '')}`;
+	const details = `&details=${encodeURIComponent(event.description)}`;
+	const location = `&location=${encodeURIComponent(event.location)}`;
+	const reminder = `&reminder=${event.reminders.overrides[0].minutes}M`;
+
+	const url = `${baseURL}${text}${dates}${details}${location}${reminder}`;
 
 	// 檢測是否為手機裝置
 	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 	if (isMobile) {
-		// 手機裝置，使用一般的方式開啟連結
-		window.location.href = url;
+		// 手機版URL
+		window.open(url.replace('calendar.google.com', 'calendar.app.google'), '_blank');
 	} else {
-		// 桌上型電腦，另開新頁面
+		// 電腦版URL
 		window.open(url, '_blank');
 	}
 });
+
 
 
