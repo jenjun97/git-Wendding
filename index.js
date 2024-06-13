@@ -51,4 +51,37 @@ function toggleSection(sectionId) {
 //    // 直接加載iframe而不提示
 //    document.getElementById('reply').appendChild(iframe);
 //}
+// index.js
+document.getElementById('google-calendar-btn').addEventListener('click', function() {
+    const event = {
+        summary: '釗&均之婚宴',
+        location: '桃園市平鎮區延平路二段371號',
+        description: '聯絡資料\n苦　主　(新郎)：小均 0909-367987\n幸運得主(新娘)：小釗 0918-411-369',
+        start: {
+            dateTime: '2024-10-19T12:00:00',
+            timeZone: 'Asia/Taipei'
+        },
+        end: {
+            dateTime: '2024-10-19T14:00:00',
+            timeZone: 'Asia/Taipei'
+        },
+        reminders: {
+            useDefault: false,
+            overrides: [
+                { method: 'popup', minutes: 30 }
+            ]
+        }
+    };
+
+    const baseURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+    const text = `&text=${encodeURIComponent(event.summary)}`;
+    const dates = `&dates=${event.start.dateTime.replace(/-|:|\.\d\d\d/g, '')}/${event.end.dateTime.replace(/-|:|\.\d\d\d/g, '')}`;
+    const details = `&details=${encodeURIComponent(event.description)}`;
+    const location = `&location=${encodeURIComponent(event.location)}`;
+    const reminder = `&reminder=${event.reminders.overrides[0].minutes}M`;
+
+    const url = `${baseURL}${text}${dates}${details}${location}${reminder}`;
+
+    window.open(url, '_blank');
+});
 
