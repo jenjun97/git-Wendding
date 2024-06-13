@@ -53,6 +53,7 @@ function toggleSection(sectionId) {
 //}
 // index.js
 document.getElementById('google-calendar-btn').addEventListener('click', function() {
+	console.log('google button onclick');
 
 	const url = 'https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBlbDZkbjVpMHFwdnNsYmJ1ZG9sajBkcjAgamVuanVuOTdAbQ&tmsrc=jenjun97%40gmail.com';
 
