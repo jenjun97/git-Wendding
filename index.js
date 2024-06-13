@@ -53,45 +53,19 @@ function toggleSection(sectionId) {
 //}
 // index.js
 document.getElementById('google-calendar-btn').addEventListener('click', function() {
-    const event = {
-        summary: '釗&均之婚宴',
-        location: '桃園市平鎮區延平路二段371號',
-        description: '聯絡資料\n苦　主　(新郎)：小均 0909-367987\n幸運得主(新娘)：小釗 0918-411-369',
-        start: {
-            dateTime: '2024-10-19T12:00:00',
-            timeZone: 'Asia/Taipei'
-        },
-        end: {
-            dateTime: '2024-10-19T14:00:00',
-            timeZone: 'Asia/Taipei'
-        },
-        reminders: {
-            useDefault: false,
-            overrides: [
-                { method: 'popup', minutes: 30 }
-            ]
-        }
-    };
 
-    const baseURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
-    const text = `&text=${encodeURIComponent(event.summary)}`;
-    const dates = `&dates=${event.start.dateTime.replace(/-|:|\.\d\d\d/g, '')}/${event.end.dateTime.replace(/-|:|\.\d\d\d/g, '')}`;
-    const details = `&details=${encodeURIComponent(event.description)}`;
-    const location = `&location=${encodeURIComponent(event.location)}`;
-    const reminder = `&reminder=${event.reminders.overrides[0].minutes}M`;
+	const url = 'https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBlbDZkbjVpMHFwdnNsYmJ1ZG9sajBkcjAgamVuanVuOTdAbQ&tmsrc=jenjun97%40gmail.com';
 
-    const url = `${baseURL}${text}${dates}${details}${location}${reminder}`;
+	// 檢測是否為手機裝置
+	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // 檢測是否為手機裝置
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        // 手機版URL
-        window.open(url.replace('calendar.google.com', 'm.calendar.google.com'), '_blank');
-    } else {
-        // 電腦版URL
-        window.open(url, '_blank');
-    }
+	if (isMobile) {
+		// 手機裝置，使用一般的方式開啟連結
+		window.location.href = url;
+	} else {
+		// 桌上型電腦，另開新頁面
+		window.open(url, '_blank');
+	}
 });
 
 
