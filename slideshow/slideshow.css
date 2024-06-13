@@ -1,20 +1,24 @@
-.carousel-item {
-    transition: opacity 1s ease-in-out;
+/* 控制輪播項目的漸變效果 */
+.slideshow-carousel-item {
+	transition: opacity 1s ease-in-out;
 }
 
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-    display: block;
+/* 顯示當前、下一個和上一個輪播項目 */
+.slideshow-carousel-item-next,
+.slideshow-carousel-item-prev,
+.slideshow-carousel-item-active {
+	display: block;
 }
 
-.carousel-item-next,
-.carousel-item-prev {
-    opacity: 0;
+/* 設定下一個和上一個輪播項目的透明度為0 */
+.slideshow-carousel-item-next,
+.slideshow-carousel-item-prev {
+	opacity: 0;
 }
 
-.carousel-item-next.carousel-item-start,
-.carousel-item-prev.carousel-item-end,
-.carousel-item.active {
-    opacity: 1;
+/* 當開始切換到下一個或結束切換到上一個項目時，將透明度設為1 */
+.slideshow-carousel-item-next-start,
+.slideshow-carousel-item-prev-end,
+.slideshow-carousel-item-active {
+	opacity: 1;
 }

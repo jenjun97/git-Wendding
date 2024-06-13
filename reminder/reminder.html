@@ -1,13 +1,27 @@
-<div class="reminder-wrapper">
-    <!-- Google提醒按鈕 -->
-    <button type="button" class="btn btn-outline-success"
-        onclick="window.location.href='https://www.addevent.com/event/xY21860587+google'">
-        Google提醒
-    </button>
+<!DOCTYPE html>
+<html lang="zh-TW">
 
-    <!-- iPhone提醒按鈕 -->
-    <button type="button" class="btn btn-outline-info"
-        onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">
-        iPhone提醒
-    </button>
-</div>
+<head>
+	<!-- 設定網頁的字符編碼為UTF-8 -->
+	<meta charset="UTF-8">
+	<!-- 設定視窗的寬度，讓網頁在不同裝置上都能正確顯示 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 設定網頁的標題 -->
+	<title>reminder</title>
+	<!-- 連結外部的CSS樣式表 -->
+	<link rel="stylesheet" href="reminder.css">
+</head>
+
+<body>
+	<!-- 提醒按鈕的容器 -->
+	<div class="reminder-wrapper">
+		<!-- Google提醒按鈕 -->
+		<button type="button" class="btn btn-outline-success reminder-btn"
+			onclick="window.location.href='https://www.addevent.com/event/xY21860587+google'">Google提醒</button>
+		<!-- iPhone提醒按鈕 -->
+		<button type="button" class="btn btn-outline-info reminder-btn"
+			onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">iPhone提醒</button>
+	</div>
+</body>
+
+</html>

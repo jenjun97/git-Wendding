@@ -1,84 +1,128 @@
-/* Google定義 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-.lxgw-wenkai-tc-light {
+/* Google定義 */
+/* 輕量字型定義 */
+.fonts-lxgw-wenkai-tc-light {
+	/* 設定字型為LXGW WenKai TC，使用cursive樣式 */
 	font-family: "LXGW WenKai TC", cursive;
+	/* 字重為300 */
 	font-weight: 300;
-	font-style: normal;
+	/* 字型樣式為正常 */
+		font-style: normal;
 }
 
-.lxgw-wenkai-tc-regular {
+/* 一般字型定義 */
+.fonts-lxgw-wenkai-tc-regular {
+	/* 設定字型為LXGW WenKai TC，使用cursive樣式 */
 	font-family: "LXGW WenKai TC", cursive;
+	/* 字重為400 */
 	font-weight: 400;
-	font-style: normal;
+	/* 字型樣式為正常 */
+		font-style: normal;
 }
 
-/*粗體*/
-.lxgw-wenkai-tc-bold {
+/* 粗體字型定義 */
+.fonts-lxgw-wenkai-tc-bold {
+	/* 設定字型為LXGW WenKai TC，使用cursive樣式 */
 	font-family: "LXGW WenKai TC", cursive;
+	/* 字重為700 */
 	font-weight: 700;
+	/* 字型樣式為正常 */
 	font-style: normal;
 }
 
-/*英數*/
-.lxgw-wenkai-tc-regular {
+/* 英數字型定義 */
+.fonts-lxgw-wenkai-tc-regular {
+	/* 設定字型為LXGW WenKai TC，使用cursive樣式 */
 	font-family: "LXGW WenKai TC", cursive;
+	/* 字重為400 */
 	font-weight: 400;
+	/* 字型樣式為正常 */
 	font-style: normal;
 }
-
-/* 本地字體定義 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /* 本地字體定義 */
+/* 定義本地字型JasonHandwriting1 */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting1 */
 	font-family: 'JasonHandwriting1';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting1.woff') format('woff');
 }
 
+/* 定義本地字型JasonHandwriting2 */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting2 */
 	font-family: 'JasonHandwriting2';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting2.woff') format('woff');
 }
 
+/* 定義本地字型JasonHandwriting3 */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting3 */
 	font-family: 'JasonHandwriting3';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting3.woff') format('woff');
 }
 
+/* 定義本地字型JasonHandwriting4 */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting4 */
 	font-family: 'JasonHandwriting4';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting4.woff') format('woff');
 }
 
+/* 定義本地字型JasonHandwriting5 */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting5 */
 	font-family: 'JasonHandwriting5';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting5.woff') format('woff');
 }
 
+/* 定義本地字型JasonHandwriting5p */
 @font-face {
+	/* 設定字型名稱為JasonHandwriting5p */
 	font-family: 'JasonHandwriting5p';
+	/* 設定字型檔案路徑及格式為woff */
 	src: url('JasonHandwriting5p.woff') format('woff');
 }
 
 /* 使用本地字體的class定義 */
-.font-jasonhandwriting1 {
+/* 設定JasonHandwriting1字型的class */
+.fonts-jasonhandwriting1 {
+	/* 使用JasonHandwriting1字型 */
 	font-family: 'JasonHandwriting1';
 }
 
-.font-jasonhandwriting2 {
+/* 設定JasonHandwriting2字型的class */
+.fonts-jasonhandwriting2 {
+	/* 使用JasonHandwriting2字型 */
 	font-family: 'JasonHandwriting2';
 }
 
-.font-jasonhandwriting3 {
+/* 設定JasonHandwriting3字型的class */
+.fonts-jasonhandwriting3 {
+	/* 使用JasonHandwriting3字型 */
 	font-family: 'JasonHandwriting3';
 }
 
-.font-jasonhandwriting4 {
+/* 設定JasonHandwriting4字型的class */
+.fonts-jasonhandwriting4 {
+	/* 使用JasonHandwriting4字型 */
 	font-family: 'JasonHandwriting4';
 }
 
-.font-jasonhandwriting5 {
+/* 設定JasonHandwriting5字型的class */
+.fonts-jasonhandwriting5 {
+	/* 使用JasonHandwriting5字型 */
 	font-family: 'JasonHandwriting5';
 }
 
-.font-jasonhandwriting5p {
+/* 設定JasonHandwriting5p字型的class */
+.fonts-jasonhandwriting5p {
+	/* 使用JasonHandwriting5p字型 */
 	font-family: 'JasonHandwriting5p';
 }
+
+

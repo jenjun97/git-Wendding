@@ -6,64 +6,57 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Wedding Invitation</title>
 
-	<!-- 引用外部CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-	<!-- 引用Bootstrap CSS -->
+	<!-- 引用外部css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
-	<!-- 引入Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- google字型 -->
+	<!--	<link rel="preconnect" href="https://fonts.googleapis.com">-->
+	<!--	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
 	<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
 	<link
 		href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
 		rel="stylesheet">
 
-	<!-- 引用內部CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-
-	<!-- 引用slideshow的CSS -->
+	<!-- 引用內部css -->
 	<link rel="stylesheet" href="slideshow/slideshow.css">
-
-	<!-- 引用info.css -->
 	<link rel="stylesheet" href="info/info.css">
-
-	<!-- 引用reminder.css -->
 	<link rel="stylesheet" href="reminder/reminder.css">
-
-	<!-- 引入Google的jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<!-- 引用fonts.css -->
 	<link rel="stylesheet" href="fonts/fonts.css">
-
-	<!-- 引用index.css -->
+	<link rel="stylesheet" href="map/map.css">
 	<link rel="stylesheet" href="index.css">
-
-	<!-- 引用button.css -->
 	<link rel="stylesheet" href="button/button.css">
+
+	<!-- 解決表單要允許cookie的問題 -->
+	<!--	<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTICS_ID"></script>-->
+	<!--	<script>-->
+	<!--		window.dataLayer = window.dataLayer || [];-->
+	<!--		function gtag() {dataLayer.push(arguments);}-->
+	<!--		gtag('js', new Date());-->
+
+	<!--		gtag('config', 'YOUR_GOOGLE_ANALYTICS_ID');-->
+	<!--	</script>-->
+
 </head>
 
-<body>
-	<br>
-	<!-- 輪播照片區塊 -->
-	<div id="slideshow" class="content-wrapper">
+<body class="index-body">
+
+	<!-- 照片 -->
+	<div id="slideshow" class="index-content-wrapper">
 		<div id="slideshow-content"></div>
 	</div>
 
-	<!-- 副標題 -->
-	<div class="content-wrapper">
-		<div class="text-center sub-title-1 font-jasonhandwriting4">揪哩呷喜酒</div>
-		<div class="text-center sub-title-2 lxgw-wenkai-tc-regular">－2024.10.19－</div>
+	<!-- 小標 -->
+	<div class="index-content-wrapper">
+		<div class="text-center index-sub-title-1 fonts-jasonhandwriting4">揪哩呷喜酒</div>
+		<div class="text-center index-sub-title-2 fonts-lxgw-wenkai-tc-regular">－2024.10.19－</div>
 	</div>
 	<br>
-	<!-- 舊按鈕 喜宴資訊 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn w-100 button-54" onclick="toggleSection('info')" style="color: rgb(255, 76, 82);">喜宴資訊</button>-->
-	<!--	</div>-->
-	<!-- 鳥按鈕 喜宴資訊 -->
-	<div class="my-2 content-wrapper d-flex justify-content-center align-items-center">
+
+	<!-- 資訊按鈕 -->
+	<div class="my-2 index-content-wrapper d-flex justify-content-center align-items-center">
 		<button class="button w-70 button--piyo" onclick="toggleSection('info')">
 			<div class="button__wrapper">
-				<span class="button__text lxgw-wenkai-tc-bold">喜宴資訊</span>
+				<span class="button__text fonts-lxgw-wenkai-tc-bold">婚宴資訊</span>
 			</div>
 			<div class="characterBox">
 				<div class="character wakeup" style="display: none;">
@@ -78,20 +71,32 @@
 			</div>
 		</button>
 	</div>
-	<!-- 引入info.html -->
-	<div id="info" class="content-section content-wrapper">
-		<iframe id="infoIframe" src="info/info.html" width="100%" frameborder="0"></iframe>
+	<!-- 資訊內容 -->
+	<div id="info" class="index-content-section index-content-wrapper" style="background-color: transparent;">
+		<div class="info-container">
+			<div class="info-content-section">
+				<h3 class="info-conclusion">新&emsp;人</h3>
+				<p class="info-story">苦&emsp;&emsp;主(新郎)：謝政均 Jun</p>
+				<p class="info-story">幸運得主(新娘)：陳姻釗 Angel</p>
+				<hr>
+				<!--			<h3 class="info-title">喜宴日期</h3>-->
+				<h3 class="info-conclusion">日&emsp;期</h3>
+				<p class="info-story">日期：2024年10月19日 星期六</p>
+				<p class="info-story">時間：中午 12:00</p>
+				<hr>
+				<h3 class="info-conclusion">地&emsp;點</h3>
+				<p class="info-story">會館：Amour阿沐</p>
+				<p class="info-story">地址：桃園市延平路二段371號</p>
+				<br>
+			</div>
+		</div>
 	</div>
 
-	<!-- 舊按鈕 婚宴回函 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn btn-primary w-100" onclick="toggleSection('reply')">婚宴回函</button>-->
-	<!--	</div>-->
-	<!-- 鳥按鈕 婚宴回函 -->
-	<div class="my-2 content-wrapper d-flex justify-content-center align-items-center">
+	<!-- 回函按鈕 -->
+	<div class="my-2 index-content-wrapper d-flex justify-content-center align-items-center">
 		<button class="button w-70 button--hoo" onclick="toggleSection('reply')">
 			<div class="button__wrapper">
-				<span class="button__text lxgw-wenkai-tc-bold">婚宴回函</span>
+				<span class="button__text fonts-lxgw-wenkai-tc-bold">婚宴回函</span>
 			</div>
 			<div class="characterBox">
 				<div class="character wakeup" style="display: none;">
@@ -112,27 +117,23 @@
 			</div>
 		</button>
 	</div>
+	<!-- 回函內容 -->
+	<div id="reply" class="index-content-section index-content-wrapper">
 
-	<!-- 引入reply.html -->
-	<div id="reply" class="content-section content-wrapper">
-		<!--		<iframe-->
-		<!--			src="https://docs.google.com/forms/d/e/1FAIpQLSdr9AIolvSGjuirBEnJwxHwNWugL1965m8f1Y760y4Uwq5zfQ/viewform?embedded=true"-->
-		<!--			width="640" height="2096" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>-->
+		<!-- google內容 -->
 		<iframe
 			src="https://docs.google.com/forms/d/e/1FAIpQLSdr9AIolvSGjuirBEnJwxHwNWugL1965m8f1Y760y4Uwq5zfQ/viewform?embedded=true"
-			width="100%" height="2185" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+			width="100%" height="540px" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+		<!-- surveycake內容 -->
+		<!--	<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"-->
+		<!--    width="100%" height="600px" src="https://www.surveycake.com/s/17pbG" style="border:#ddd 1px solid;" allowTransparency="true" frameborder="0"></iframe>-->
 	</div>
 
-
-	<!-- 舊按鈕 婚宴地圖 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn btn-primary w-100" onclick="toggleSection('map')">婚宴地圖</button>-->
-	<!--	</div>-->
-	<!-- 鳥按鈕 婚宴地圖 -->
-	<div class="my-2 content-wrapper d-flex justify-content-center align-items-center">
+	<!-- 地圖按鈕 -->
+	<div class="my-2 index-content-wrapper d-flex justify-content-center align-items-center">
 		<button class="button button--pen w-70" onclick="toggleSection('map')">
 			<div class="button__wrapper">
-				<span class="button__text lxgw-wenkai-tc-bold">婚宴地圖</span>
+				<span class="button__text fonts-lxgw-wenkai-tc-bold">婚宴地圖</span>
 			</div>
 			<div class="characterBox">
 				<div class="character wakeup" style="display: none;">
@@ -150,33 +151,26 @@
 			</div>
 		</button>
 	</div>
-	<!-- 引入google圖 -->
-	<div id="map" class="content-section content-wrapper">
+	<!-- 地圖內容 -->
+	<div id="map" class="index-content-section index-content-wrapper">
 		<div id="map-content">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.6739774464763!2d121.20467957488256!3d24.943174041943738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823a8dd7ded09%3A0xb73295131781b2c5!2zQW1vdXLpmL_mspA!5e0!3m2!1szh-TW!2stw!4v1716369949011!5m2!1szh-TW!2stw"
 				width="100%" style="border:0;" allowfullscreen="" loading="lazy"
 				referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
-		<!-- 會館資訊 -->
-		<div class="lxgw-wenkai-tc-bold">
-			<div class="text-center">Amour阿沐</div>
-			<div class="ps-1" style="padding-left: 5px;">地址：324桃園市平鎮區延平路二段371號</div>
-			<div class="ps-1" style="padding-left: 5px;">電話：(03) 495-1375</div>
-
+		<div>
+			<p class="map-title">Amour阿沐</p>
+			<p class="map-text">地址：桃園市平鎮區延平路二段371號</p>
+			<p class="map-text">電話：03-495-1375</p>
 		</div>
-
 	</div>
 
-	<!--舊按鈕 喜宴提醒 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn btn-primary w-100" onclick="toggleSection('reminder')">喜宴提醒</button>-->
-	<!--	</div>-->
-	<!-- 鳥按鈕 喜宴提醒 -->
-	<div class="my-2 content-wrapper d-flex justify-content-center align-items-center">
+	<!-- 提醒按鈕 -->
+	<div class="my-2 index-content-wrapper d-flex justify-content-center align-items-center">
 		<button class="button w-70 button--piyo" onclick="toggleSection('reminder')">
 			<div class="button__wrapper">
-				<span class="button__text lxgw-wenkai-tc-bold">喜宴提醒</span>
+				<span class="button__text fonts-lxgw-wenkai-tc-bold">婚宴提醒</span>
 			</div>
 			<div class="characterBox">
 				<div class="character wakeup" style="display: none;">
@@ -191,50 +185,36 @@
 			</div>
 		</button>
 	</div>
-	<div id="reminder" class="content-section content-wrapper">
-		<div id="reminderContent">
+	<!-- 提醒內容 -->
+	<div id="reminder" class="index-content-section index-content-wrapper" style="background-color: transparent;">
+		<div id="reminderContent"></div>
+		<!--		<iframe id="reminererIframe" src="reminder/reminder.html" width="100%" frameborder="0"></iframe>-->
+		<div class="reminder-wrapper">
+			<!-- Google提醒按鈕 -->
+			<button type="button" class="btn btn-primary"
+				onclick="window.location.href='https://www.addevent.com/event/xY21860587+google'">加入Google行事曆提醒</button>
+			<!-- iPhone提醒按鈕 -->
+			<button type="button" class="btn btn-success"
+				onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">加入iPhone行事曆提醒</button>
 		</div>
-		<button type="button" class="btn btn-outline-info"
-			onclick="window.location.href='https://www.addevent.com/event/xY21860587+apple'">
-			test提醒
-		</button>
-		<iframe id="reminererIframe" src="reminder/reminder.html" width="100%" frameborder="0"></iframe>
-
 	</div>
 
-	<!-- 舊按鈕 喜訊分享 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn btn-primary w-100" onclick="toggleSection('share')">喜訊分享</button>-->
-	<!--	</div>-->
-	<!--	<div id="share" class="content-section content-wrapper">-->
-	<!--		<div id="share-content"></div>-->
-	<!--	</div>-->
-
-	<!-- 賓客相簿 -->
-	<!--	<div class="my-2 content-wrapper">-->
-	<!--		<button class="btn btn-primary w-100" onclick="toggleSection('guest-album')">賓客相簿</button>-->
-	<!--	</div>-->
-	<!--	<div id="guest-album" class="content-section content-wrapper">-->
-	<!--		<div id="guest-album-content"></div>-->
-	<!--	</div>-->
-
+	<!-- 底部文字 -->
+	<div class="index-content-wrapper logo-container">
+		<!-- 加入底部文字 -->
+		<img src="logo.png" alt="Logo" class="responsive-logo">
+		<h6 class="fonts-lxgw-wenkai-tc-regular" style="color:#31383F; line-height: 7px; font-size:10px">Wedding Invitation</h6>
+		<h6 class="fonts-lxgw-wenkai-tc-regular" style="color:#31383F; line-height: 7px; font-size:10px">Angel & Jun enter into a marriage</h6>
+	</div>
 	<br>
 	<br>
 </body>
 
-<!-- 引用Bootstrap JS -->
+<!-- 引用外部css -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- 引用slideshow的JS -->
+<!-- 引用內部css -->
 <script src="slideshow/slideshow.js"></script>
-
-<!-- 引用index.js -->
 <script src="index.js"></script>
-
-<!-- 引用info.js -->
-<script src="info/info.js"></script>
-
-<!-- 引用reminder.js -->
-<script src="reminder/reminder.js"></script>
 
 </html>

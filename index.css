@@ -1,81 +1,105 @@
-/* index.css */
-body {
-	/* 設定背景圖片 */
-	/*	background-image: url('background.jpg');*/
-
-	/* 背景圖片不會隨著內容滾動 */
-	/*	background-attachment: fixed;*/
-
-	/* 背景圖片的位置 */
-	/*	background-position: center;*/
-
-	/* 背景圖片不重複 */
-	/*	background-repeat: no-repeat;*/
-
-	/* 設定背景圖片的大小 */
-	/*	background-size: 450px 1000px;*/
-	/* 這裡的尺寸可以根據您的需求調整 */
-
+/* 設定body背景色 */
+body.index-body {
+/*	background-color: #F4D9B3;*/
 	background-color: #F2E9EB;
 }
 
-.sub-title-1 {
-    font-size: 12vw; /* 根據視窗寬度動態調整字體大小 */
-    color: #DD8EA4;
+/* 設定副標題1的字體大小和顏色 */
+.index-sub-title-1 {
+	font-size: 12vw;
+/*	color: #DD8EA4;*/
+	color: #DD8EA4;
 }
 
-.sub-title-2 {
-    font-size: 8vw; /* 根據視窗寬度動態調整字體大小 */
+/* 設定副標題2的字體大小 */
+.index-sub-title-2 {
+	font-size: 8vw;
 }
 
-/* 定義內容區塊的基本樣式 */
-.content-section {
+/* 設定內容區塊的顯示樣式 */
+.index-content-section {
 	display: none;
-	/* 預設為隱藏 */
 	padding: 15px;
 	border: 1px solid #ccc;
 	margin-top: 10px;
 	background-color: #f9f9f9;
 	width: 100%;
-	/* 設置內容區塊寬度為100% */
 	max-width: 430px;
-	/* 設置內容區塊的最大寬度 */
 	min-width: 380px;
-	/* 設置內容區塊的最小寬度 */
 	margin: 0 auto;
-	/* 置中 */
 }
 
-/* 内容的样式 */
-.content-wrapper {
+/* 設定內容包裝區塊的樣式 */
+.index-content-wrapper {
 	width: 100%;
-	/* 設置內容寬度為100% */
 	max-width: 430px;
-	/* 設置內容的最大寬度 */
 	min-width: 380px;
-	/* 設置內容的最小寬度 */
 	margin: 0 auto;
-	/* 置中 */
 	text-align: center;
-	/* 文字置中 */
 }
 
-/* 針對螢幕寬度小於380px的樣式 */
+/* 小於380px螢幕寬度時的樣式 */
 @media (max-width: 380px) {
 
-	.content-wrapper,
-	.content-section {
+	.index-content-wrapper,
+	.index-content-section {
 		max-width: 100%;
-/*		 設置內容區塊的最大寬度為100% */
 	}
-	
 }
 
+/* 大於430px螢幕寬度時的樣式 */
 @media (min-width: 430px) {
-    .sub-title-1 {
-        font-size: 51.6px; /* 固定字體大小 */
-    }
-    .sub-title-2 {
-        font-size: 34.4px; /* 固定字體大小 */
-    }
+	.index-sub-title-1 {
+		font-size: 51.6px;
+	}
+
+	.index-sub-title-2 {
+		font-size: 34.4px;
+	}
+}
+
+/* 修改 info 的樣式，使其背景顏色變為透明 */
+#index-content-section.info {
+	background-color: transparent;
+	/* 設定背景顏色為透明 */
+}
+
+/* 調整 info 內部文字的大小，使其根據視窗大小調整 */
+.info-content-section {
+	font-size: 2vw;
+	/* 根據視窗寬度調整文字大小 */
+	max-width: 430px;
+	/* 最大寬度為430px */
+	margin: 0 auto;
+	/* 水平居中 */
+	padding: 20px;
+	/* 內邊距 */
+	box-sizing: border-box;
+	/* 包含內邊距和邊框在內的計算 */
+}
+
+/* 確保 info 內部文字的最大寬度不超過430px */
+@media (min-width: 430px) {
+	.info-content-section {
+		font-size: 1.6vw;
+		/* 當視窗寬度大於430px時，設置固定字體大小 */
+	}
+}
+
+/* 設定圖片 logo 的樣式 */
+.responsive-logo {
+	/* 置中圖片 */
+	display: block;
+	margin:  auto;
+	/* 設定圖片的最大寬度 */
+	max-width: 20%;
+	height: auto;
+}
+
+/* 當視窗寬度超過時，圖片不再縮放 */
+@media (min-width: 430px) {
+	.responsive-logo {
+		/* 設定圖片的最大寬度 */
+		max-width: 20%;
+	}
 }

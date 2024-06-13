@@ -1,0 +1,50 @@
+
+/* 設定故事段落的字型大小、行高、顏色和底部外距 */
+.map-text {
+	/*	font-size: 18px;*/
+	font-size: 4.5vw;
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 10px;
+
+	/* 最大寬度為430px */
+	max-width: 430px;
+	/* 水平居中 */
+	/*	margin: 0 auto;*/
+	/* 將文字改為靠左對齊 */
+	text-align: left;
+	/* 設定左邊距為8px */
+	margin-left: 5%;
+}
+
+/* 確保 info-story 的最大寬度不超過430px */
+@media (min-width: 430px) {
+	.map-text {
+		/* 當視窗寬度大於430px時，設置固定字體大小 */
+		font-size: 18.45px;
+	}
+}
+
+/* 設定結論段落的字型大小、行高、顏色、對齊方式、頂部外距和字型加粗 */
+.map-title {
+	/*	font-size: 18px;*/
+	font-size: 7vw;
+	line-height: 1.6;
+	/*	color: #d9534f;*/
+	color: #DD8EA4;
+	text-align: center;
+	margin-top: 20px;
+	font-weight: bold;
+	/* 最大寬度為430px */
+	max-width: 430px;
+	/* 水平居中 */
+	margin: 0 auto;
+}
+
+/* 確保 info-conclusion 的最大寬度不超過430px */
+@media (min-width: 430px) {
+	.map-title {
+		/* 當視窗寬度大於430px時，設置固定字體大小 */
+		font-size: 29.9px;
+	}
+}

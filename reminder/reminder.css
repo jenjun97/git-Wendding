@@ -1,16 +1,25 @@
 /* reminder.css */
-
 /* 設置提醒按鈕的基本樣式 */
 .reminder-wrapper {
-    display: flex;
-    flex-direction: column;  /* 垂直排列按鈕 */
-    align-items: center;  /* 水平置中 */
-    gap: 10px;  /* 按鈕之間的間距 */
-    margin-top: 20px;
+	display: flex;
+	/* 垂直排列按鈕 */
+	flex-direction: column;
+	/* 水平置中 */
+	align-items: center;
+	/* 按鈕之間的間距 */
+	gap: 10px;
+	/*	margin-top: 20px;*/
+
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	padding: 10px;
+	border-radius: 8px;
 }
 
 /* 設置按鈕的樣式 */
-.reminder-wrapper .btn {
-    width: 80%;  /* 設置按鈕寬度為80% */
-    max-width: 300px;  /* 設置按鈕的最大寬度 */
+.reminder-wrapper .reminder-btn {
+	/* 設置按鈕寬度為80% */
+	width: 80%;
+	/* 設置按鈕的最大寬度 */
+	max-width: 300px;
 }
