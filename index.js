@@ -82,6 +82,16 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
     const url = `${baseURL}${text}${dates}${details}${location}${reminder}`;
 
-    window.open(url, '_blank');
+    // 檢測是否為手機裝置
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // 手機版URL
+        window.open(url.replace('calendar.google.com', 'm.calendar.google.com'), '_blank');
+    } else {
+        // 電腦版URL
+        window.open(url, '_blank');
+    }
 });
+
 
