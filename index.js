@@ -69,7 +69,7 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 		reminders: {
 			useDefault: false,
 			overrides: [
-				{ method: 'reminder', minutes: 30 }
+				{ method: 'popup', minutes: 30 }
 			]
 		}
 	};
