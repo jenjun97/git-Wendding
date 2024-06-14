@@ -88,7 +88,9 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 	if (isMobile) {
 		// 手機版URL
-		window.open(url.replace('calendar.google.com', 'calendar.app.google'), '_blank');
+		//		window.open(url.replace('calendar.google.com', 'calendar.app.google'), '_blank');
+		// 手機裝置，使用一般的方式開啟連結
+		window.location.href = url;
 	} else {
 		// 電腦版URL
 		window.open(url, '_blank');
