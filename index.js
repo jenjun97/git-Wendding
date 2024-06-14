@@ -121,10 +121,17 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-        const encodedIcs = encodeURIComponent(icsContent.trim());
-        const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
+        const blob = new Blob([icsContent.trim()], { type: 'text/calendar' });
+        const url = URL.createObjectURL(blob);
 
-        window.location.href = dataUri;
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'event.ics';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        URL.revokeObjectURL(url);
     } else {
         alert("此功能僅在 iPhone 上可用。");
     }
