@@ -97,21 +97,22 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 // iphone行事曆
 document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-	// 檢測是否為 iPhone 裝置
-	const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    // 檢測是否為 iPhone 裝置
+    const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-	// 如果是 iPhone 裝置，生成 .ics 檔案 URL 並啟動下載
-	if (isIphone) {
-		const title = encodeURIComponent("Event Title");
-		const location = encodeURIComponent("Event Location");
-		const notes = encodeURIComponent("Event Notes");
-		const startDate = "20240614T090000";
-		const endDate = "20240614T100000";
-		const icsContent = `
+    if (isIphone) {
+        // 定義事件詳細信息
+        const title = encodeURIComponent("Event Title");
+        const location = encodeURIComponent("Event Location");
+        const notes = encodeURIComponent("Event Notes");
+        const startDate = "20240614T090000";
+        const endDate = "20240614T100000";
+
+        // 構建 .ics 文件內容
+        const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
-URL:${url}
 UID:${new Date().getTime()}@example.com
 DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}
 ORGANIZER;CN=Your Name:MAILTO:yourname@example.com
@@ -123,17 +124,18 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-		const icsData = 'data:text/calendar;charset=utf8,' + encodeURIComponent(icsContent.trim());
+        // 生成 .ics 文件的 URL
+        const icsData = 'data:text/calendar;charset=utf8,' + encodeURIComponent(icsContent.trim());
 
-		// 創建隱藏的錨點元素並觸發下載
-		const link = document.createElement('a');
-		link.href = icsData;
-		link.download = 'event.ics';
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	} else {
-		// 否則顯示提示訊息
-		alert("此功能僅在 iPhone 上可用。");
-	}
+        // 創建隱藏的錨點元素並觸發下載
+        const link = document.createElement('a');
+        link.href = icsData;
+        link.download = 'event.ics';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        // 否則顯示提示訊息
+        alert("此功能僅在 iPhone 上可用。");
+    }
 });
