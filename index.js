@@ -97,19 +97,43 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 // iphone行事曆
 document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-            // 檢測是否為 iPhone 裝置
-            const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+	// 檢測是否為 iPhone 裝置
+	const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-            if (isIphone) {
-                const title = encodeURIComponent("Event Title");
-                const location = encodeURIComponent("Event Location");
-                const notes = encodeURIComponent("Event Notes");
-                const startDate = "20240614T090000";
-                const endDate = "20240614T100000";
-                const url = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0ABEGIN:VEVENT%0D%0AURL:${url}%0D%0AUID:${new Date().getTime()}@example.com%0D%0ADTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}%0D%0AORGANIZER;CN=Your Name:MAILTO:yourname@example.com%0D%0ADTSTART:${startDate}%0D%0ADTEND:${endDate}%0D%0ASUMMARY:${title}%0D%0ALOCATION:${location}%0D%0ADESCRIPTION:${notes}%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR`;
+	// 如果是 iPhone 裝置，生成 .ics 檔案 URL 並啟動下載
+	if (isIphone) {
+		const title = encodeURIComponent("Event Title");
+		const location = encodeURIComponent("Event Location");
+		const notes = encodeURIComponent("Event Notes");
+		const startDate = "20240614T090000";
+		const endDate = "20240614T100000";
+		const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+URL:${url}
+UID:${new Date().getTime()}@example.com
+DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}
+ORGANIZER;CN=Your Name:MAILTO:yourname@example.com
+DTSTART:${startDate}
+DTEND:${endDate}
+SUMMARY:${title}
+LOCATION:${location}
+DESCRIPTION:${notes}
+END:VEVENT
+END:VCALENDAR`;
 
-                window.location.href = url;
-            } else {
-                alert("此功能僅在 iPhone 上可用。");
-            }
-        });
+		const icsData = 'data:text/calendar;charset=utf8,' + encodeURIComponent(icsContent.trim());
+
+		// 創建隱藏的錨點元素並觸發下載
+		const link = document.createElement('a');
+		link.href = icsData;
+		link.download = 'event.ics';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	} else {
+		// 否則顯示提示訊息
+		alert("此功能僅在 iPhone 上可用。");
+	}
+});
