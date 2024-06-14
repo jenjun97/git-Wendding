@@ -124,15 +124,21 @@ END:VCALENDAR`;
         const blob = new Blob([icsContent.trim()], { type: 'text/calendar' });
         const url = URL.createObjectURL(blob);
 
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'event.ics';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // 在新窗口中使用 Safari 打開 URL
+        const safariUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(icsContent.trim())}`;
+        const openSafari = (url) => {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'event.ics';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        };
 
-        URL.revokeObjectURL(url);
+        openSafari(safariUrl);
     } else {
         alert("此功能僅在 iPhone 上可用。");
     }
 });
+
