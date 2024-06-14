@@ -97,18 +97,15 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 // iphone行事曆
 document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-    // 檢測是否為 iPhone 裝置
     const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isIphone) {
-        // 定義事件詳細資訊
         const title = "姻釗Angel&政均Jun婚宴日";
         const location = "324桃園市平鎮區延平路二段371號";
         const notes = "姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375";
         const startDate = "20241019T120000";
         const endDate = "20241019T140000";
 
-        // 建立 .ics 檔案內容
         const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
@@ -124,14 +121,11 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-        // 轉換 .ics 檔案內容為 data URI
         const encodedIcs = encodeURIComponent(icsContent.trim());
         const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
 
-        // 開啟 data URI 以觸發 iPhone 行事曆應用程式
         window.location.href = dataUri;
     } else {
-        // 顯示提示訊息
         alert("此功能僅在 iPhone 上可用。");
     }
 });
