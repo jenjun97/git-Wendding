@@ -121,24 +121,25 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-        const blob = new Blob([icsContent.trim()], { type: 'text/calendar' });
-        const url = URL.createObjectURL(blob);
+        const encodedIcs = encodeURIComponent(icsContent.trim());
+        const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
 
-        // 在新窗口中使用 Safari 打開 URL
-        const safariUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(icsContent.trim())}`;
+        // 強制使用 Safari 打開
         const openSafari = (url) => {
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'event.ics';
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = `safari://open-url?url=${encodeURIComponent(url)}`;
+            document.body.appendChild(iframe);
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+                window.location.href = url; // 如果 Safari 打開失敗，則回退到直接在當前瀏覽器中打開
+            }, 500);
         };
 
-        openSafari(safariUrl);
+        openSafari(dataUri);
     } else {
         alert("此功能僅在 iPhone 上可用。");
     }
 });
+
 
