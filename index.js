@@ -97,18 +97,18 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 // iphone行事曆
 document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-    // 檢測是否為 iPhone 裝置
+    // Check if the device is an iPhone
     const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isIphone) {
-        // 定義事件詳細信息
-        const title = encodeURIComponent("Event Title");
-        const location = encodeURIComponent("Event Location");
-        const notes = encodeURIComponent("Event Notes");
+        // Define the event details
+        const title = "Event Title";
+        const location = "Event Location";
+        const notes = "Event Notes";
         const startDate = "20240614T090000";
         const endDate = "20240614T100000";
 
-        // 構建 .ics 文件內容
+        // Create the .ics file content
         const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
@@ -124,18 +124,22 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-        // 生成 .ics 文件的 URL
-        const icsData = 'data:text/calendar;charset=utf8,' + encodeURIComponent(icsContent.trim());
+        // Create a Blob for the .ics file
+        const blob = new Blob([icsContent.trim()], { type: 'text/calendar' });
+        const url = URL.createObjectURL(blob);
 
-        // 創建隱藏的錨點元素並觸發下載
+        // Create a hidden link element and trigger the download
         const link = document.createElement('a');
-        link.href = icsData;
+        link.href = url;
         link.download = 'event.ics';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        // Revoke the object URL after download
+        URL.revokeObjectURL(url);
     } else {
-        // 否則顯示提示訊息
+        // Show alert if not on an iPhone
         alert("此功能僅在 iPhone 上可用。");
     }
 });
