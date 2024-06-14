@@ -97,18 +97,18 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 
 // iphone行事曆
 document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-    // Check if the device is an iPhone
+    // 檢測是否為 iPhone 裝置
     const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isIphone) {
-        // Define the event details
-        const title = "Event Title";
-        const location = "Event Location";
-        const notes = "Event Notes";
-        const startDate = "20240614T090000";
-        const endDate = "20240614T100000";
+        // 定義事件詳細資訊
+        const title = "姻釗Angel&政均Jun婚宴日";
+        const location = "324桃園市平鎮區延平路二段371號";
+        const notes = "姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375";
+        const startDate = "20241019T120000";
+        const endDate = "20241019T140000";
 
-        // Create the .ics file content
+        // 建立 .ics 檔案內容
         const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
@@ -124,22 +124,14 @@ DESCRIPTION:${notes}
 END:VEVENT
 END:VCALENDAR`;
 
-        // Create a Blob for the .ics file
-        const blob = new Blob([icsContent.trim()], { type: 'text/calendar' });
-        const url = URL.createObjectURL(blob);
+        // 轉換 .ics 檔案內容為 data URI
+        const encodedIcs = encodeURIComponent(icsContent.trim());
+        const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
 
-        // Create a hidden link element and trigger the download
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'event.ics';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        // Revoke the object URL after download
-        URL.revokeObjectURL(url);
+        // 開啟 data URI 以觸發 iPhone 行事曆應用程式
+        window.location.href = dataUri;
     } else {
-        // Show alert if not on an iPhone
+        // 顯示提示訊息
         alert("此功能僅在 iPhone 上可用。");
     }
 });
