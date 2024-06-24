@@ -95,5 +95,51 @@ document.getElementById('google-calendar-btn').addEventListener('click', functio
 	}
 });
 
+// iphone行事曆
+document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
+    const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isIphone) {
+        const title = "姻釗Angel&政均Jun婚宴日";
+        const location = "324桃園市平鎮區延平路二段371號";
+        const notes = "姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375";
+        const startDate = "20241019T120000";
+        const endDate = "20241019T140000";
+
+        const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:${new Date().getTime()}@example.com
+DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}
+ORGANIZER;CN=Your Name:MAILTO:yourname@example.com
+DTSTART:${startDate}
+DTEND:${endDate}
+SUMMARY:${title}
+LOCATION:${location}
+DESCRIPTION:${notes}
+END:VEVENT
+END:VCALENDAR`;
+
+        const encodedIcs = encodeURIComponent(icsContent.trim());
+        const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
+
+        // 強制使用 Safari 打開
+        const openSafari = (url) => {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = `safari://open-url?url=${encodeURIComponent(url)}`;
+            document.body.appendChild(iframe);
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+                window.location.href = url; // 如果 Safari 打開失敗，則回退到直接在當前瀏覽器中打開
+            }, 500);
+        };
+
+        openSafari(dataUri);
+    } else {
+        alert("此功能僅在 iPhone 上可用。");
+    }
+});
 
 
