@@ -1,28 +1,33 @@
 
-/**
- * 切換指定區塊的顯示或隱藏，並關閉其他區塊
- * @param {string} sectionId - 區塊的ID
- */
 // 切換指定區塊的顯示或隱藏，並關閉其他區塊
 function toggleSection(sectionId) {
-	// 獲取所有區塊的ID
-	const sections = [
-		'info',
-		'reply',
-		'map',
-		'reminder'
-	];
+	// 定義所有區塊的ID
+	const sections = ['info', 'reply', 'map'];
 
+	// 獲取要切換的區塊
+	let sectionToToggle = document.getElementById(sectionId);
+	// 判斷該區塊是否顯示
+	let isSectionVisible = sectionToToggle.style.display === "block";
+	// 用於標識是否再次點擊同一區塊
+	let isSameSectionClicked = false;
+
+	// 遍歷所有區塊的ID
 	sections.forEach(id => {
+		// 獲取區塊的元素
 		const section = document.getElementById(id);
 		if (section) {
 			if (id === sectionId) {
+				// 如果是要切換的區塊
 				if (section.style.display === "none" || section.style.display === "") {
-					// 顯示指定區塊
+					// 如果區塊目前是隱藏的，顯示該區塊
 					section.style.display = "block";
+					// 滾動到該區塊
+					section.scrollIntoView({ behavior: "smooth" });
 				} else {
-					// 隱藏指定區塊
+					// 如果區塊目前是顯示的，隱藏該區塊
 					section.style.display = "none";
+					// 標記為再次點擊同一區塊
+					isSameSectionClicked = true;
 				}
 			} else {
 				// 隱藏其他區塊
@@ -30,6 +35,11 @@ function toggleSection(sectionId) {
 			}
 		}
 	});
+
+	// 如果是隱藏同一區塊，滾動到頁面頂端
+	if (isSameSectionClicked) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 }
 
 /**
@@ -51,95 +61,4 @@ function toggleSection(sectionId) {
 //    // 直接加載iframe而不提示
 //    document.getElementById('reply').appendChild(iframe);
 //}
-
-// google行事曆
-document.getElementById('google-calendar-btn').addEventListener('click', function() {
-	const event = {
-		summary: '姻釗Angel&政均Jun婚宴日',
-		location: '324桃園市平鎮區延平路二段371號',
-		description: '姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375',
-		start: {
-			dateTime: '2024-10-19T12:00:00',
-			timeZone: 'Asia/Taipei'
-		},
-		end: {
-			dateTime: '2024-10-19T14:00:00',
-			timeZone: 'Asia/Taipei'
-		},
-		reminders: {
-			useDefault: false,
-			overrides: [
-				{ method: 'popup', minutes: 30 }
-			]
-		}
-	};
-
-	const baseURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
-	const text = `&text=${encodeURIComponent(event.summary)}`;
-	const dates = `&dates=${event.start.dateTime.replace(/-|:|\.\d\d\d/g, '')}/${event.end.dateTime.replace(/-|:|\.\d\d\d/g, '')}`;
-	const details = `&details=${encodeURIComponent(event.description)}`;
-	const location = `&location=${encodeURIComponent(event.location)}`;
-	const reminder = `&reminder=${event.reminders.overrides[0].minutes}M`;
-
-	const url = `${baseURL}${text}${dates}${details}${location}${reminder}`;
-
-	// 檢測是否為手機裝置
-	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-	if (isMobile) {
-		// 手機版URL
-		window.location.href = url;
-	} else {
-		// 電腦版URL
-		window.open(url, '_blank');
-	}
-});
-
-// iphone行事曆
-document.getElementById('iphone-calendar-btn').addEventListener('click', function() {
-    const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (isIphone) {
-        const title = "姻釗Angel&政均Jun婚宴日";
-        const location = "324桃園市平鎮區延平路二段371號";
-        const notes = "姻釗Angel&政均Jun婚宴日\n\n新人-(苦主)謝政均 Jun\n電話：0909-367987\n\n新人-(幸運得主)：陳姻釗 Angel\n電話：0918-411369\n\n日期：2024年10月19日 星期六\n時間：中午 12:00\n\n會館：Amour阿沐\n地址：324桃園市平鎮區延平路二段371號\n電話：03-495 - 1375";
-        const startDate = "20241019T120000";
-        const endDate = "20241019T140000";
-
-        const icsContent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-UID:${new Date().getTime()}@example.com
-DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}
-ORGANIZER;CN=Your Name:MAILTO:yourname@example.com
-DTSTART:${startDate}
-DTEND:${endDate}
-SUMMARY:${title}
-LOCATION:${location}
-DESCRIPTION:${notes}
-END:VEVENT
-END:VCALENDAR`;
-
-        const encodedIcs = encodeURIComponent(icsContent.trim());
-        const dataUri = `data:text/calendar;charset=utf8,${encodedIcs}`;
-
-        // 強制使用 Safari 打開
-        const openSafari = (url) => {
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = `safari://open-url?url=${encodeURIComponent(url)}`;
-            document.body.appendChild(iframe);
-            setTimeout(() => {
-                document.body.removeChild(iframe);
-                window.location.href = url; // 如果 Safari 打開失敗，則回退到直接在當前瀏覽器中打開
-            }, 500);
-        };
-
-        openSafari(dataUri);
-    } else {
-        alert("此功能僅在 iPhone 上可用。");
-    }
-});
-
 
