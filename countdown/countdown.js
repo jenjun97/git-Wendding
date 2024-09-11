@@ -1,8 +1,8 @@
 // 設定倒數計時的目標日期和時間
-var targetDate = new Date('2024-10-19T12:00:00');
+var targetDate = new Date('2024-09-11T08:46:00');
 var timerId = null;
 
-// 格式化時間顯示
+// 格式化時間顯示-日時分秒
 function formatTime(time) {
 	// 設置計時器的字體顏色為黑色
 	document.getElementById('timer').style.color = 'black';
@@ -15,6 +15,23 @@ function formatTime(time) {
 	return days + ':' + ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
 }
 
+// 格式化時間顯示-時分秒
+function formatTimeHMS(time) {
+	// 設置計時器的字體顏色為黑色
+	document.getElementById('timer').style.color = 'black';
+	// 計算總小時數
+	var hours = Math.floor(time / 3600);
+	var minutes = Math.floor((time % 3600) / 60);
+	var seconds = time % 60;
+	// 返回格式化後的時間字串
+	// 格式化小時數，刪除千位數前面的0
+	var formattedHours = hours.toString();
+
+	// 返回格式化後的時間字串
+	return formattedHours + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+
+}
+
 // 更新計時器
 function updateTimer() {
 	// 獲取當前時間
@@ -25,8 +42,9 @@ function updateTimer() {
 	// 如果時間到，顯示紅色00:00:00
 	if (timeLeft <= 0) {
 		// 設置計時器顯示為00天 00:00:00，並將字體顏色設為紅色
-		document.getElementById('timer').innerHTML = '00天 00:00:00';
-		document.getElementById('timer').style.color = 'red';
+		// document.getElementById('timer').innerHTML = '00天 00:00:00';
+		// document.getElementById('timer').style.color = 'red';
+		document.getElementById('timer').innerHTML = 'It\'s Show Time';
 		// 清除計時器
 		clearInterval(timerId);
 		return;

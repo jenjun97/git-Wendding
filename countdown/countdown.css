@@ -1,6 +1,11 @@
 /* 設置頁面背景顏色 */
 body {
 	background-color: #FFFFFF;
+	height: 100vh; /* 讓body佔滿整個視窗的高度 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin: 0; /* 移除默認的頁面外邊距 */
 }
 
 /* 設置計時器的字體和顏色 */
